@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "title": "為你自己學 Python",
+    "price": 600
+  },
+  {
+    "id": 2,
+    "title": "JavaScript 深入淺出",
+    "price": 471
+  },
+  {
+    "id": 3,
+    "title": "C++ 實戰技巧",
+    "price": 881
+  },
+  {
+    "id": 4,
+    "title": "為你自己學 Ruby on Rails",
+    "price": 657
+  },
+  {
+    "id": 5,
+    "title": "Go 語言快速上手",
+    "price": 348
+  },
+  {
+    "id": 6,
+    "title": "R 程式語言資料分析",
+    "price": 729
+  },
+  {
+    "id": 7,
+    "title": "Swift 開發指南",
+    "price": 441
+  },
+  {
+    "id": 8,
+    "title": "Rust 系統程式設計",
+    "price": 419
+  },
+  {
+    "id": 9,
+    "title": "Ruby 程式範例精解",
+    "price": 634
+  },
+  {
+    "id": 10,
+    "title": "PHP 網頁設計",
+    "price": 995
+  },
+  {
+    "id": 11,
+    "title": "HTML5 和 CSS3 教程",
+    "price": 574
+  },
+  {
+    "id": 12,
+    "title": "SQL 資料庫基礎",
+    "price": 641
+  },
+  {
+    "id": 13,
+    "title": "Kotlin 安卓開發",
+    "price": 584
+  },
+  {
+    "id": 14,
+    "title": "Perl 自動化腳本",
+    "price": 582
+  },
+  {
+    "id": 15,
+    "title": "Node.js 從零開始",
+    "price": 300
+  },
+  {
+    "id": 16,
+    "title": "React.js 實務應用",
+    "price": 893
+  },
+  {
+    "id": 17,
+    "title": "Vue.js 架構設計",
+    "price": 652
+  },
+  {
+    "id": 18,
+    "title": "Angular 開發實戰",
+    "price": 569
+  },
+  {
+    "id": 19,
+    "title": "Django 網站建置",
+    "price": 622
+  },
+  {
+    "id": 20,
+    "title": "Flask 簡明手冊",
+    "price": 541
+  },
+  {
+    "id": 21,
+    "title": "ASP.NET MVC 開發",
+    "price": 857
+  },
+  {
+    "id": 22,
+    "title": "TensorFlow 機器學習",
+    "price": 770
+  },
+  {
+    "id": 23,
+    "title": "PyTorch 深度學習",
+    "price": 584
+  },
+  {
+    "id": 24,
+    "title": "人工智慧程式設計",
+    "price": 454
+  },
+  {
+    "id": 25,
+    "title": "資料結構與演算法",
+    "price": 698
+  },
+  {
+    "id": 26,
+    "title": "區塊鏈技術指南",
+    "price": 692
+  },
+  {
+    "id": 27,
+    "title": "Linux Shell 腳本編寫",
+    "price": 871
+  },
+  {
+    "id": 28,
+    "title": "Docker 容器化技術",
+    "price": 555
+  },
+  {
+    "id": 29,
+    "title": "Kubernetes 雲端運維",
+    "price": 634
+  },
+  {
+    "id": 30,
+    "title": "為你自己學 Git",
+    "price": 891
+  }
+]
