@@ -37,15 +37,15 @@
   - 部署
     - Vercel <-- Next.js (React)
     - Netlify
+    - Render
 - 練習
   - 檔案上傳
-    - Cloudinary
     - AWS S3
       - Cloudflare R2
       - Backblaze B2
   - 金流
     - 藍新
+    - Paypal
   - 第三方登入
   - Google Map Places API
   - OpenAI
-    - 5 USD
