@@ -1,0 +1,51 @@
+# API 串接
+
+- API
+  - v JSON
+  - XML
+  - SOAP
+  - HTMX -> HTML
+- REST
+  - HTTP Verbs
+    - GET -> Read
+    - POST -> Create
+    - PUT -> Update
+    - PATCH -> Update
+    - DELETE -> Delete
+    - CRUD
+    - OPTIONS
+      - CORS
+        - 瀏覽器 + 程式(JS)
+        - 如何解決?
+  - RESTful API
+    - Verb + Resource
+      - GET /posts/1
+      - POST /posts
+      - PUT or PATCH /posts/1
+      - DELETE /posts/1
+- 串接
+  - fetch
+  - axios
+  - v promise + .then
+  - v async + await
+- 做給別人串
+  - node
+  - express
+  - 資料庫
+    - MySQL
+    - Prisma
+  - 部署
+    - Vercel <-- Next.js (React)
+    - Netlify
+- 練習
+  - 檔案上傳
+    - Cloudinary
+    - AWS S3
+      - Cloudflare R2
+      - Backblaze B2
+  - 金流
+    - 藍新
+  - 第三方登入
+  - Google Map Places API
+  - OpenAI
+    - 5 USD
