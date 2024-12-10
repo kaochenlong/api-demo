@@ -95,4 +95,21 @@ describe("Book", () => {
       expect(response.status).toBe(400)
     })
   })
+
+  describe("Delete", () => {
+    it("can delete a book", async () => {
+      const book = await getBook(1)
+      const response = await request(app).delete(`/v1/books/${book.id}`)
+
+      expect(response.body).toEqual({ message: `book ${book.title} deleted` })
+      expect(response.status).toBe(200)
+    })
+
+    it("can not delete a book", async () => {
+      const response = await request(app).delete(`/v1/books/-1`)
+
+      expect(response.body).toEqual({ message: "not found" })
+      expect(response.status).toBe(404)
+    })
+  })
 })

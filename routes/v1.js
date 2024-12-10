@@ -5,6 +5,7 @@ const v1Route = Express.Router()
 v1Route.get("/books", BookController.List)
 v1Route.get("/books/:id", BookController.Show)
 v1Route.put("/books/:id", BookController.Update)
+v1Route.delete("/books/:id", BookController.Delete)
 v1Route.post("/books", BookController.Create)
 
 export default v1Route

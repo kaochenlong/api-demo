@@ -55,4 +55,17 @@ const Update = async (req, res) => {
   }
 }
 
-export { List, Show, Create, Update }
+const Delete = async (req, res) => {
+  const id = req.params.id
+  const book = await getBook(id)
+
+  if (book) {
+    // 刪除
+    res.json({ message: `book ${book.title} deleted` })
+  } else {
+    res.status(404)
+    res.json({ message: "not found" })
+  }
+}
+
+export { List, Show, Create, Update, Delete }
