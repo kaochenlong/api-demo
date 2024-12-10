@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "a.js",
   "scripts": {
-    "dev": "nodemon api-server.mjs",
+    "dev": "nodemon server.js",
     "test": "NODE_NO_WARNINGS=1 NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "type": "module",
