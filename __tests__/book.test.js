@@ -11,12 +11,29 @@ describe("Ping", () => {
 })
 
 describe("Book", () => {
-  it("can get book list", async () => {
-    const response = await request(app).get("/v1/books")
+  describe("get book", () => {
+    it("can get book list", async () => {
+      const response = await request(app).get("/v1/books")
 
-    expect(response.body).toHaveProperty("records")
-    expect(response.body).toHaveProperty("count")
-    expect(response.status).toBe(200)
+      expect(response.body).toHaveProperty("records")
+      expect(response.body).toHaveProperty("count")
+      expect(response.status).toBe(200)
+    })
+
+    it("can get a single book", async () => {
+      const response = await request(app).get("/v1/books/1")
+
+      expect(response.body).toHaveProperty("id", 1)
+      expect(response.body).toHaveProperty("title")
+      expect(response.status).toBe(200)
+    })
+
+    it("can not get a single book", async () => {
+      const response = await request(app).get("/v1/books/aaa")
+
+      expect(response.status).toBe(404)
+      expect(response.body).toEqual({ message: "not found" })
+    })
   })
 
   describe("create book", () => {
