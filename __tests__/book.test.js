@@ -19,7 +19,24 @@ describe("Book", () => {
     expect(response.status).toBe(200)
   })
 
-  it("can create a new book", () => {
-    //
+  describe("create book", () => {
+    it("can create a new book", async () => {
+      const book = { title: "cccc", price: 100 }
+
+      const response = await request(app).post("/v1/books").send(book)
+
+      expect(response.status).toBe(200)
+      expect(response.body).toHaveProperty("id")
+      expect(response.body).toHaveProperty("title", book.title)
+      expect(response.body).toHaveProperty("price", book.price)
+    })
+
+    it("can not create a new book", async () => {
+      const book = { title: "cccc" }
+      const response = await request(app).post("/v1/books").send(book)
+
+      expect(response.status).toBe(400)
+      expect(response.body).toEqual({ message: "format error" })
+    })
   })
 })
