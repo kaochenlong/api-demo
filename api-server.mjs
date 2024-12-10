@@ -1,5 +1,5 @@
 import Express from "express"
-import * as BookController from "./controllers/book_controller.js"
+import v1Route from "./routes/v1.js"
 
 const PORT = process.env.PORT || 3001
 const app = Express()
@@ -12,10 +12,5 @@ app.listen(PORT, () => {
 app.get("/ping", (_, res) => {
   res.json({ message: "pong" })
 })
-
-const v1Route = Express.Router()
-v1Route.get("/books", BookController.List)
-v1Route.get("/books/:id", BookController.Show)
-v1Route.post("/books", BookController.Create)
 
 app.use("/v1", v1Route)
