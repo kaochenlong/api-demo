@@ -1,8 +1,12 @@
-const books = [
-  { id: 1, title: "CCC", price: 100 },
-  { id: 3, title: "DDD", price: 80 },
-  { id: 10, title: "EEE", price: 90 },
-]
+import { readFile } from "fs/promises"
+
+async function loadBook() {
+  const file = process.cwd() + "/data/book.json"
+  const content = await readFile(file)
+  return JSON.parse(content)
+}
+
+const books = await loadBook()
 
 const List = (_req, res) => {
   const data = {

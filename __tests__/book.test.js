@@ -21,8 +21,10 @@ describe("Book", () => {
     })
 
     it("can get a single book", async () => {
+      // Act
       const response = await request(app).get("/v1/books/1")
 
+      // Assert
       expect(response.body).toHaveProperty("id", 1)
       expect(response.body).toHaveProperty("title")
       expect(response.status).toBe(200)
