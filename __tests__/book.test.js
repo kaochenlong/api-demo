@@ -1,5 +1,6 @@
 import request from "supertest"
 import app from "../app.js"
+import { getBook } from "../models/book.js"
 
 describe("Ping", () => {
   it("will return pong", async () => {
@@ -56,6 +57,42 @@ describe("Book", () => {
 
       expect(response.status).toBe(400)
       expect(response.body).toEqual({ message: "format error" })
+    })
+  })
+
+  describe("Update", () => {
+    it("can update a book", async () => {
+      // Arrange
+      const book = await getBook(1)
+
+      // Act
+      const data = { title: "NewBook", price: 200 }
+      const response = await request(app).put(`/v1/books/${book.id}`).send(data)
+
+      // Assert
+      expect(response.body).toEqual({ id: book.id, title: data.title, price: data.price })
+      expect(response.status).toBe(200)
+    })
+
+    it("can not find book to update", async () => {
+      const data = { title: "NewBook", price: 200 }
+      const response = await request(app).put(`/v1/books/aaa`).send(data)
+
+      expect(response.status).toBe(404)
+      expect(response.body).toEqual({ message: "not found" })
+    })
+
+    it("can not update", async () => {
+      // Arrange
+      const book = await getBook(1)
+
+      // Act
+      const data = { title: "NewBook" }
+      const response = await request(app).put(`/v1/books/${book.id}`).send(data)
+
+      // Assert
+      expect(response.body).toEqual({ message: "format error" })
+      expect(response.status).toBe(400)
     })
   })
 })

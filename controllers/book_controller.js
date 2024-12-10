@@ -1,10 +1,4 @@
-import { readFile } from "fs/promises"
-
-async function loadBook() {
-  const file = process.cwd() + "/data/book.json"
-  const content = await readFile(file)
-  return JSON.parse(content)
-}
+import { loadBook, getBook } from "../models/book.js"
 
 const books = await loadBook()
 
@@ -17,9 +11,9 @@ const List = (_req, res) => {
   res.json(data)
 }
 
-const Show = (req, res) => {
+const Show = async (req, res) => {
   const { id } = req.params
-  const book = books.find((b) => b.id == id)
+  const book = await getBook(id)
 
   if (book) {
     res.json(book)
@@ -41,4 +35,24 @@ const Create = (req, res) => {
   }
 }
 
-export { List, Show, Create }
+const Update = async (req, res) => {
+  const id = req.params.id
+  const { title, price } = req.body
+
+  const book = await getBook(id)
+
+  if (book) {
+    if (title && price) {
+      // 更新
+      res.json({ id: book.id, title, price })
+    } else {
+      res.status(400)
+      res.json({ message: "format error" })
+    }
+  } else {
+    res.status(404)
+    res.json({ message: "not found" })
+  }
+}
+
+export { List, Show, Create, Update }
