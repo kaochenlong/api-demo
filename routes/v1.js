@@ -13,5 +13,6 @@ v1Route.post("/books", BookController.Create)
 v1Route.get("/payment", PaymentController.Payment)
 v1Route.post("/payment", PaymentController.GetMoney)
 v1Route.get("/payment/done", PaymentController.PaymentDone)
+v1Route.get("/payment/token", PaymentController.TokenGeneerator)
 
 export default v1Route
